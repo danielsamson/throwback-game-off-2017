@@ -7,7 +7,7 @@ namespace CompleteProject {
     
 	public class ClickToMove : MonoBehaviour {
 
-		public Transform goal;
+		public Transform goal = null;
         private NavMeshAgent agent;
 
 		void Start()
@@ -27,6 +27,8 @@ namespace CompleteProject {
 					agent.destination = hit.point;
 				}
 			}
+
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, 0, 0);
 		}
 	}
 }
